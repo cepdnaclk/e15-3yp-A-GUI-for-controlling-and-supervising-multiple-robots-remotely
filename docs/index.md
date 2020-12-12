@@ -17,10 +17,7 @@ layout: home
 1. [Introduction](#introduction)
 2. [Solution Architecture](#solution-architecture )
 3. [Hardware & Software Designs](#hardware-and-software-designs)
-4. [Testing](#testing)
-5. [Detailed budget](#detailed-budget)
-6. [Conclusion](#conclusion)
-7. [Links](#links)
+4. [Links](#links)
 
 ---
 
@@ -77,8 +74,8 @@ Generally, WebRTC is designed for stream Video and Audio, but there is a channel
 
 You can learn more about WebRTC from following links.
 
-- (WebRTC : Official Page)[https://webrtc.org/]
-- (What Is WebRTC and How Does It Work?)[https://www.innoarchitech.com/blog/what-is-webrtc-and-how-does-it-work]
+- [WebRTC : Official Page](https://webrtc.org/)
+- [What Is WebRTC and How Does It Work?](https://www.innoarchitech.com/blog/what-is-webrtc-and-how-does-it-work)
 
 ### Data Communication between Robots and Robot Server
 
@@ -140,31 +137,13 @@ We used 5mm x 60mm Hex bolts, M5 nuts, and M5 washers as the spacers between two
 
 ![image](https://lh6.googleusercontent.com/8krYIG5PGphWnT7aW11lJU67qWQj96g91JZwe1wzMzniYRw-C5twiv4VnTjjvGC4iaoTd3UFRrAuk6oaDWhmu64hgcwIW1_vJXkjDzXbDAf0uTAxxAs5D6VwKZi-N6-szjDT9UQ3)
 
-
-## Testing
-
- testing done on hardware and software, detailed + summarized results
-
-## Detailed budget
-
-[//]: # (all items and costs
-
-| Item          | Quantity  | Unit Cost  | Total  |
-| ------------- |:---------:|:----------:|-------:|
-| Sample item   | 5         | 10 LKR     | 50 LKR |
-
-## Conclusion
-
- what was achieved, future developments, commercialization plans
-
 ## Links
 
-- [Project Repository](https://github.com/cepdnaclk/repository-name)
-- [Project Page](https://cepdnaclk.github.io/repository-name)
+- [Project Repository](https://github.com/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
+- [Project Page](https://cepdnaclk.github.io/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
-- [Custom Page](page_1)
 
 [//]: # (Please refer this to learn more about Markdown syntax)
 [//]: # (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
