@@ -5,9 +5,9 @@ layout: home
 # A GUI for control & supervising multiple robots remotely
 
 ## Team
--  E/15/140, Jaliyagoda A.J.N.M., [email](mailto:nuwanjaliyagoda@eng.pdn.ac.lk)
--  E/15/173, Karunarathne S.D.D.D, [email](mailto:dinelkadilshani95@gmail.com)
--  E/15/350, Tennakoon T.M.P.B., [email](mailto:pasan96tennakoon@gmail.com )
+-  E/15/140, Jaliyagoda A.J.N.M., [nuwanjaliyagoda@eng.pdn.ac.lk](mailto:nuwanjaliyagoda@eng.pdn.ac.lk)
+-  E/15/173, Karunarathne S.D.D.D, [dinelkadilshani95@gmail.com](mailto:dinelkadilshani95@gmail.com)
+-  E/15/350, Tennakoon T.M.P.B., [pasan96tennakoon@gmail.com](mailto:pasan96tennakoon@gmail.com)
 
 <div class="container p-2 mb-4">
     <img class="img-fluid" src="img_cover.jpg" style="width:100%" />
@@ -138,6 +138,10 @@ We used 5mm x 60mm Hex bolts, M5 nuts, and M5 washers as the spacers between two
 ![image](https://lh6.googleusercontent.com/8krYIG5PGphWnT7aW11lJU67qWQj96g91JZwe1wzMzniYRw-C5twiv4VnTjjvGC4iaoTd3UFRrAuk6oaDWhmu64hgcwIW1_vJXkjDzXbDAf0uTAxxAs5D6VwKZi-N6-szjDT9UQ3)
 
 ## Links
+
+- [Technical Design](/pdf/Technical_Design.pdf)
+- [User Manual](/pdf/User_Manual.pdf)
+
 
 - [Project Repository](https://github.com/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
 - [Project Page](https://cepdnaclk.github.io/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
