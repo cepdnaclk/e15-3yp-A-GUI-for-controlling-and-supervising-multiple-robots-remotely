@@ -1,0 +1,174 @@
+body {
+    background-color: #fdfdfd;
+}
+
+.userIco {
+    height: 34px;
+    border: 2px solid #0b78d1 !important;
+    /*padding: 0!important;
+    margin: 0!important;*/
+}
+
+.userIco:hover {
+    border: 2px solid #4daaf6 !important;
+}
+
+.app-block {
+    padding: 5px;
+    -webkit-transition: all .5s; /* Safari */
+    transition: all .5s;
+    margin: 7px 4px !important;
+}
+
+.app-block:hover {
+    background-color: #e0e0e0;
+    border: 1px solid grey;
+    -webkit-transition: all .5s; /* Safari */
+    transition: all .5s;
+}
+
+.app-block img {
+    max-width: 72px;
+}
+
+.app-table td {
+    width: 25%;
+    min-width: 150px;
+}
+
+.app-details {
+    /*font-size: small;*/
+    color: #000000;
+    margin: 2px;
+}
+
+.app-details:hover {
+    color: #858585;
+}
+
+.app-tab-body {
+    padding: 30px 10px 15px 30px;
+}
+
+.app-a-btn {
+    text-decoration: none !important;
+}
+
+.container, .container-fluid {
+    -webkit-transition: all .5s linear; /* Safari */
+    transition: all .5s linear;
+}
+
+.footer-totop {
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+}
+
+.cButton {
+    min-width: 100px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 360px) {
+    .site-title {
+        font-size: smaller;
+    }
+}
+
+@media screen and (min-width: 361px) {
+    .site-title {
+        font-size: medium;
+    }
+}
+
+p {
+    font-size: medium !important;
+}
+
+.app-link {
+    font-size: small;
+    display:inline-block !important;
+    color: #2196f3;
+    padding: 5px!important;
+}
+
+.app-link:hover {
+    color: #217dd7;
+    background-color: #ffffff !important;
+    text-decoration: underline;
+}
+
+
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 14px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.navBarTitle{
+    min-width: 150px;
+}
+
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 3px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #4288da;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #4288da;
+  cursor: pointer;
+}
+
+.irSignalBox{
+   width: 10ch;
+   padding: 5px!important;
+   margin: 1px!important;
+}

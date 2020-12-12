@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <link href="./css/index.css" rel="stylesheet"/>
+    <link href="./css/w3.css" rel="stylesheet"/>
+    <link href="./css/w3-theme.css" rel="stylesheet"/>
+    <link href="./css/font-awesome.min.css" rel="stylesheet"/>
+
+    <script type="application/javascript" src="./js/jquery.min.js"></script>
+    <script type="application/javascript" src="./js/index.js"></script>
+
+    <title>Swarm Robot GUI</title>
+
+    <link href="./css/home.css" rel="stylesheet"/>
+    <link href="./css/color-slider.css" rel="stylesheet"/>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/api.js"></script>
+    <style>
+    td{
+        vertical-align:middle!important;
+    }
+</style>
+</head>
+<body>
+
+    <div class="w3-display-container w3-top w3-card-2">
+        <div class="w3-bar w3-theme w3-large">
+            <a href="#" class="w3-bar-item w3-button w3-hover-theme w3-theme-button">
+                <i class="fa fa-home"></i>
+            </a>
+            <span class="w3-bar-item w3-large w3-padding-12 w3-hide-small">Swarm GUI</span>
+        </div>
+    </div>
+
+    <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-col m2 l2 hidden-sm">&nbsp;</div>
+            <div class="w3-col s12 m8 l8">
+                <div class="w3-container">
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-col s4 m3 l3">
+                <div class="w3-container">
+
+                    <div class="w3-sidebar w3-bar-block w3-card" style="background-color:#294257;color:white;width:20%; font-size:16px">
+                        <button class="w3-bar-item w3-button tablink w3-disabled" onclick="openSide(event, 'Info')">Info</button>
+                        <button class="w3-bar-item w3-button tablink w3-disabled" onclick="openSide(event, 'Sensors')">Sensors</button>
+                        <button class="w3-bar-item w3-button tablink w3-disabled" onclick="openSide(event, 'Motion')">Motion</button>
+                        <button class="w3-bar-item w3-button tablink w3-disabled" onclick="openSide(event, 'NeoPixelLED')">NeoPixel LED</button>
+                        <button class="w3-bar-item w3-button tablink w3-disabled" onclick="openSide(event, 'IR')">IR</button>
+                        <button class="w3-bar-item w3-button tablink w3-disabled" onclick="openSide(event, 'Console')">Console</button>
+                        <button class="w3-bar-item w3-button tablink w3-disabled" onclick="openSide(event, 'Log')">Log</button>
+                        <button class="w3-bar-item w3-button tablink w3-disabled" onclick="openSide(event, 'Settings')">Settings</button>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="w3-col s8 m9 l9">
+                <div class="w3-container">
+                    <div class="w3-row" >
+                        <div class="w3-container w3-padding-12">
+                            <table>
+                                <tr>
+                                    <td>IP:</td>
+                                    <td>
+                                        <select class="w3-select w3-border" id="selectIP">
+                                            <option value="127.0.0.1" disabled selected>192.168.8.x</option>
+                                        </select>
+                                    </td>
+
+
+                                    <td>&nbsp;</td>
+                                    <td align="left">
+                                        <div class="w3-btn-group">
+                                            <button type="button" id="btnConnect"
+                                            class="w3-button w3-small w3-white w3-border w3-border-blue" onclick="connect()">
+                                            Connect</button>
+                                            <button type="button" id="btnRefresh"
+                                            class="w3-button w3-small w3-white w3-border w3-border-blue" onclick="networkSearch()">
+                                            Scan</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="w3-container">
+                    <div class="w3-row">
+                        <div>
+                            <div id="Info" class="w3-container side">
+                                <table>
+                                    <td>Status:</td>
+                                    <td><input class="w3-input w3-border" id="txtStatus" type="text" name="text" value="Not Connected" readonly/></td>
+                                </table>
+
+                                <br>
+
+                                <fieldset id="robot0Fieldset" style="width:500px">
+                                    <legend>Robot 0</legend>
+
+                                    <table class="w3-table w3-bordered w3-striped w3-border w3-small" style="vertical-align:center">
+                                        <tr>
+                                            <td style="width:250px;">Id</td>
+                                            <td><b><span id="robotId">0</span></b></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="width:250px;">Serial Number</td>
+                                            <td><b><span id="txtSerial"></span></b></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="width:250px;">Firmware Version</td>
+                                            <td><b><span id="txtVersion"></span></b></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="width:250px;">Firmware Author</td>
+                                            <td><b><span id="txtAuthor"></span></b></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="width:250px;">Available Features</td>
+                                            <td><b><span id="robotFeatures"></span></b></td>
+                                        </tr>
+
+                                    </table>
+                                </fieldset>
+                                <br>
+
+                            </div>
+
+                            <div id="Sensors" class="w3-container side" style="display:none; width:700px">
+
+                                <fieldset id="robot0Fieldset">
+                                    <legend>Robot</legend>
+
+                                    <table class="w3-table w3-bordered w3-striped w3-border w3-small" style="vertical-align:center">
+                                        <tr>
+                                            <td>Accel</td>
+                                            <td>X: <span id="accelX">0.00</span></td>
+                                            <td>Y: <span id="accelY">0.00</span></td>
+                                            <td>Z: <span id="accelZ">0.00</span></td>
+                                            <td>&nbsp;</td>
+                                            <td class="w3-right"><button class="w3-btn w3-button w3-theme-button" onclick="updateAccel()">Read</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Compass</td>
+                                            <td>X: <span id="compX">0.00</span></td>
+                                            <td>Y: <span id="compY">0.00</span></td>
+                                            <td>Z: <span id="compZ">0.00</span></td>
+                                            <td><span id="compHeading">0</span></td>
+                                            <td class="w3-right"><button class="w3-btn w3-button w3-theme-button" onclick="updateComp()">Read</button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Distance</td>
+                                            <td>Raw: <span id="distRaw">0</span></td>
+                                            <td>Filtered: <span id="distFiltered">0</span></td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td class="w3-right"><button class="w3-btn w3-button w3-theme-button" onclick="updateProximity()">Read</button></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Color</td>
+                                            <td>R: <span id="colorRed">0</span></td>
+                                            <td>G: <span id="colorGreen">0</span></td>
+                                            <td>B: <span id="colorBlue">0</span></td>
+                                            <td><span id="colorShow" class="w3-tag w3-round" style="padding:1px 15px 1px 15px !important ">&nbsp;&nbsp;&nbsp;</span></td>
+                                            <td class="w3-right"><button class="w3-btn w3-button w3-theme-button" onclick="updateColor()">Read</button></td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+
+
+                                <br>
+
+                            </div>
+
+                            <div id="Motion" class="w3-container side" style="display:none; width:400px">
+                                <fieldset style="width:500px; padding:50px">
+                                    <div class="w3-container w3-padding-12">
+                                        <table align="center">
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                                                    onclick="send(8)">Forward</button>
+                                                </td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                                                    onclick="send(4)">Left</button>
+                                                </td>
+                                                <td>
+                                                    <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                                                    onclick="send(5)">Stop</button>
+                                                </td>
+                                                <td>
+                                                    <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                                                    onclick="send(6)">Right</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                                                    onclick="send(2)">Backward</button>
+                                                </td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td colspan="2" style="height:50px">
+                                                    <div class="slidecontainer">
+                                                        <span class="w3-small">Speed: <span id="txtSpeed"></span></span>
+                                                    </div>
+                                                    <br>
+                                                </td>
+
+                                                <td colspan="2">
+                                                    <input type="range" min="70" max="255" value="70" step="5" class="slider" id="speed" style="width:200px">
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td colspan="2" style="height:50px">
+                                                    <div class="slidecontainer">
+                                                        <span class="w3-small">Degree per<br>rotation: <span id="txtAngle"></span></span>
+                                                    </div>
+                                                    <br>
+                                                </td>
+                                                <td colspan="2">
+                                                    <input type="range" min="0" max="180" value="0" step="5" class="slider" id="rotAngle" style="width:200px">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </fieldset>
+
+
+
+                            </div>
+
+                            <div id="NeoPixelLED" class="w3-container side" style="display:none">
+                                <div>
+                                    <fieldset id="robot0Fieldset" style="width:500px">
+                                        <table style="width:100%;">
+                                            <tr>
+                                                <td>Color</td>
+                                                <td>
+                                                    <fieldset>
+                                                        <label for="r0">R</label>
+                                                        <input type="range" min="0" max="255" id="r0" step="1" value="0">
+                                                        <output for="r0" id="r_out0">0</output>
+                                                    </fieldset>
+
+                                                    <fieldset>
+                                                        <label for="g0">G</label>
+                                                        <input type="range" min="0" max="255" id="g0" step="1" value="0">
+                                                        <output for="g0" id="g_out0">0</output>
+                                                    </fieldset>
+
+                                                    <fieldset>
+                                                        <label for="b0">B</label>
+                                                        <input type="range" min="0" max="255" id="b0" step="1" value="0">
+                                                        <output for="b0" id="b_out0">0</output>
+                                                    </fieldset>
+                                                </td>
+                                                <td class="w3-center">
+                                                    <output id="hex0">#000000</output><br>
+
+                                                    <button class="w3-btn w3-button w3-theme-button" onclick="writeColor()">Write</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </fieldset>
+                                    <br>
+
+                                </div>
+                            </div>
+
+                            <div id="IR" class="w3-container side" style="display:none">
+                                <fieldset style="width:400px">
+                                    <legend>IR</legend>
+                                    <br>
+                                    <form>
+                                        <table class="w3-table w3-bordered w3-striped w3-border w3-small" style="vertical-align:center">
+                                            <tr>
+                                                <td>Send Row Signal</td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td> <input type="text" name="signal"> </td>
+                                                <td>  <button id="signal" class="w3-btn w3-button w3-theme-button w3-right w3-disabled" onclick="sendRawSignal()">Send</button> </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <br>
+                                </fieldset>
+
+                            </div>
+
+                            <div id="Console" class="w3-container side" style="display:none">
+                                <div class="w3-container" style="width:100%">
+                                    <div class="w3-row" >
+
+                                        <div class="w3-col s12 m6 l6" style="padding:0px 0px 0px 0px !important">
+                                            <div class=" w3-card-4">
+                                                <header class="w3-container w3-theme-d1">Receive</header>
+
+                                                <div class="w3-container w3-padding-12">
+                                                    <ul class="w3-navbar">
+                                                        <li style="margin: 15px;">Updated on: <span id="timeUpd"></span></li>
+                                                        <li class="w3-right w3-hover-theme"><a id="btnClear" href="monitor.php" class="tablink w3-hover-theme">Clear</a></li>
+                                                    </ul>
+                                                    <textarea id="input" style="height: 60vh!important; width:100%;"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="w3-col s12 m6 l6" style="padding:0px 5px 30px 5px !important">
+                                            <div class=" w3-card-4">
+                                                <header class="w3-container w3-theme-d1">Send</header>
+
+                                                <div class="w3-container w3-padding-12">
+                                                    <!--<textarea name="comment"style="width:97%;min-height:200px; margin:1px !important"></textarea>-->
+                                                    <input type="text" class="w3-input w3-border" id="send">
+                                                    <textarea id="output" style="height: 60vh!important; width:100%;"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="Log" class="w3-container side" style="display:none">
+                                <div class=" w3-card-4" style="width:600px">
+                                    <header class="w3-container" style="background-color:#294257">Log</header>
+
+                                    <div class="w3-container w3-padding-12">
+                                        <div id="txtLog" class="w3-border w3-padding-4 w3-white w3-left-align w3-small" style="min-height:150px; width:100%; padding:5px!important;" ></div>
+                                        <button type="button" id="btnLogClear" class="w3-button w3-right w3-small w3-white w3-border w3-border-blue" style="margin:4px!important;" >Clear</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="Settings" class="w3-container side" style="display:none">
+                                <fieldset style="width:600px">
+                                    <legend>Motors</legend>
+                                    <br>
+                                    <form>
+                                        <table class="w3-table w3-bordered w3-striped w3-border w3-small" style="vertical-align:center">
+                                            <tr>
+                                                <td > Left speed correct </td>
+                                                <td> <input type="text" name="leftSpeedCorrect" id="leftSpeedCorrect"> </td>
+                                                <td>  <button type="button" class="w3-btn w3-button w3-theme-button w3-right" onclick="updateLeftSpeedCorrect()">Update</button></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td > Right speed correct </td>
+                                                <td> <input type="text" name="rightSpeedCorrect" id="rightSpeedCorrect"> </td>
+                                                <td>  <button type="button" class="w3-btn w3-button w3-theme-button w3-right" onclick="updateRightSpeedCorrect()">Update</button> </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td > Robot ID </td>
+                                                <td> <input type="text" name="settingRobotId" id="settingRobotId"> </td>
+                                                <td>  <button type="button" class="w3-btn w3-button w3-theme-button w3-right" onclick="updateSettingRobotId()">Update</button> </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                    <br>
+                                </fieldset>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    function openSide(evt, sideTab) {
+        if(connection)
+        var i, x, tablinks;
+        x = document.getElementsByClassName("side");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-theme-action", "");
+        }
+        document.getElementById(sideTab).style.display = "block";
+        evt.currentTarget.className += " w3-theme-action";
+    }
+
+    </script>
+
+    <script src="./js/sensors.js"></script>
+    <script src="./js/motion.js"></script>
+    <script src="./js/neopixelLED.js"></script>
+    <script src="./js/ir.js"></script>
+    <script src="./js/log.js"></script>
+    <script src="./js/settings.js"></script>
+
+</body>
+</html>

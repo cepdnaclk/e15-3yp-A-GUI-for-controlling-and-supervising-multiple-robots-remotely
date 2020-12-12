@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+   <link rel="stylesheet" href="css/w3.css">
+   <link rel="stylesheet" href="css/w3-theme.css">
+   <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="css/font-awesome.min.css">
+
+   <script src="js/jquery-1.9.0.min.js"></script>
+   <script src="js/api.js"></script>
+
+   <style>
+   body {text-align: center;}
+   header {height: 32px;padding: 7px !important;}
+   .motionBtn {width: 90px !important;}
+   .w3-card-4 {background-color: #ededed !important;}
+   .w3-button {min-width: 100px;}
+   </style>
+
+   <title>Swarm Robotics Dashboard</title>
+</head>
+<body>
+
+   <div class="w3-container w3-header" style="background-color:#203344; color:white">
+      <h3>Swarm Robotics: Web Monitor</h3>
+   </div>
+
+   <br>
+
+   <div class="w3-container">
+      <div class="w3-row">
+         <div class="w3-col s12 m12 l3">
+            <div class=" w3-card-4">
+               <header class="w3-container" style="background-color:#203344; color:white">
+                  Connection
+               </header>
+
+               <div class="w3-container w3-padding-12">
+                  <table>
+                     <tr>
+                        <td>IP:</td>
+                        <td>
+                           <select class="w3-select w3-border" id="selectIP">
+                              <option value="127.0.0.1" disabled selected>192.168.8.x</option>
+                           </select>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>Status:</td>
+                        <td><input class="w3-input w3-border" id="txtStatus" type="text" name="text" value="Not Connected" readonly/></td>
+                     </tr>
+
+                     <tr>
+                        <td>Robot:</td>
+                        <td><input class="w3-input w3-border"  id="txtVersion" type="text" name="text" value="Mini_v3" readonly/></td>
+                     </tr>
+
+                     <tr>
+                        <td>&nbsp;</td>
+                        <td align="left">
+                           <div class="w3-btn-group">
+                              <button type="button" id="btnConnect"
+                              class="w3-button w3-small w3-white w3-border w3-border-blue">
+                              Connect</button>
+                              <button type="button" id="btnRefresh"
+                              class="w3-button w3-small w3-white w3-border w3-border-blue" onclick="networkSearch()">
+                              Scan</button>
+                           </div>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+
+            </div>
+            <br>
+            <div class=" w3-card-4">
+               <header class="w3-container" style="background-color:#203344; color:white">
+                  Log
+               </header>
+
+               <div class="w3-container w3-padding-12">
+                  <div id="txtLog" class="w3-border w3-padding-4 w3-white w3-left-align w3-small"
+                  style="min-height:200px; width:100%; padding:5px!important;" >
+
+               </div>
+               <button type="button" id="btnLogClear"
+               class="w3-button w3-right w3-small w3-white w3-border w3-border-blue"
+               style="margin:4px!important;" >Clear</button>
+            </div>
+         </div>
+      </div>
+
+      <div class="w3-col s12 m12 l5">&nbsp;</div>
+
+      <div class="w3-col s12 m12 l4">
+         <div class=" w3-card-4">
+            <header class="w3-container" style="background-color:#203344; color:white">
+               Sensors
+            </header>
+
+            <div class="w3-container w3-padding-12">
+               <div class="w3-responsive">
+                  <table class="w3-table w3-bordered w3-striped w3-border w3-small">
+                     <tr>
+                        <td>Accel</td>
+                        <td>X: <span id="accelX">0.00</span></td>
+                        <td>Y: <span id="accelY">0.00</span></td>
+                        <td>Z: <span id="accelZ">0.00</span></td>
+                        <td>&nbsp;</td>
+                     </tr>
+                     <tr>
+                        <td>Compass</td>
+                        <td>X: <span id="compX">0.00</span></td>
+                        <td>Y: <span id="compY">0.00</span></td>
+                        <td>Z: <span id="compZ">0.00</span></td>
+                        <td><span id="compHeading">0</span></td>
+                     </tr>
+
+                     <tr>
+                        <td>Distance</td>
+                        <td>Raw: <span id="distRaw">0</span></td>
+                        <td>Filtered: <span id="distFiltered">0</span></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                     </tr>
+
+                     <tr>
+                        <td>Color</td>
+                        <td>R: <span id="colorRed">0</span></td>
+                        <td>G: <span id="colorGreen">0</span></td>
+                        <td>B: <span id="colorBlue">0</span></td>
+                        <td><span id="colorShow" class="w3-tag w3-round" style="padding:1px 15px 1px 15px !important ">&nbsp;&nbsp;&nbsp;</span></td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <br>
+         <div class=" w3-card-4">
+            <header class="w3-container" style="background-color:#203344; color:white">
+               Motion
+            </header>
+
+            <div class="w3-container w3-padding-12">
+               <table align="center">
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                        onclick="send(8)">Forward</button>
+                     </td>
+                     <td>&nbsp;</td>
+                  </tr>
+
+                  <tr>
+                     <td>
+                        <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                        onclick="send(4)">Left</button>
+                     </td>
+                     <td>
+                        <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                        onclick="send(5)">Stop</button>
+                     </td>
+                     <td>
+                        <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                        onclick="send(6)">Right</button>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                        onclick="send(2)">Backward</button>
+                     </td>
+                     <td>&nbsp;</td>
+                  </tr>
+
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>&nbsp;</td>
+                     <td>&nbsp;</td>
+                  </tr>
+
+                  <tr>
+                     <td colspan="3" style="height:50px; vertical-align:middle">
+                        <div class="slidecontainer">
+                           <input type="range" min="0" max="180" value="90" step="5" class="slider" id="rotAngle">
+                           <span class="w3-small">Degree per rotation: <span id="txtAngle"></span></span>
+                        </div>
+                        <br>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td>
+                        <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                        id="macro1" onclick="">Compass</button>
+                     </td>
+                     <td>
+                        <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                        id="macro2" onclick="">Color</button>
+                     </td>
+                     <td>
+                        <button class="w3-button w3-small motionBtn w3-white w3-border w3-border-blue"
+                        id="macro3">Distance</button>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<br>
+
+<div class="w3-bottom w3-hide-small">
+   <ul class="w3-navbar" style="background-color:#203344; color:white">
+      <li><a href="#">&nbsp;</a></li>
+      <li class="w3-right"><a href="#">Last Update: <span id="lastUpdate">2019-04-24 10:10:10</span></a></li>
+   </ul>
+</div>
+</body>
+
+<script>
+var robotIp, robotStatus, robotVersion;
+
+$("#txtAngle").html($("#rotAngle").val());
+
+$("#rotAngle").change(function(){
+   $("#txtAngle").html(this.value);
+});
+
+
+$(document).ready(function () {
+   //$("#col1").load("./motion.html");
+
+   // Find active devices
+   networkSearch();
+
+   $("#btnConnect").click(function () {
+      robotIp = $("#txtIP").val();
+
+      if (connect(robotIp)) {
+         robotStatus = "Connected";
+         $("#lastUpdate").html(getDateTime());
+      }
+   });
+
+   $("#btnLogClear").click(function(){
+      $("#txtLog").html("");
+   });
+
+   $("#macro1").click(function () {
+      updateAccel();
+      setTimeout(function() {
+         updateComp();
+      },2000);
+   });
+
+   $("#macro2").click(function () {
+      updateColor();
+   });
+
+   $("#macro3").click(function () {
+      updateProximity();
+   });
+});
+
+function getDateTime() {
+   return new Date().toLocaleString();
+}
+
+function log(txt){
+   $("#txtLog").prepend(txt + "<br>");
+}
+
+</script>
+
+</html>

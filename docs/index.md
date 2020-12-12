@@ -139,10 +139,15 @@ We used 5mm x 60mm Hex bolts, M5 nuts, and M5 washers as the spacers between two
 
 ## Links
 
+### Pages
+- [Local Controller](/controlPanel/)
+- [Control Panel](/localServer/)
+
+### Documents
 - [Technical Design](/pdf/Technical_Design.pdf)
 - [User Manual](/pdf/User_Manual.pdf)
 
-
+### Other Links
 - [Project Repository](https://github.com/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
 - [Project Page](https://cepdnaclk.github.io/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
