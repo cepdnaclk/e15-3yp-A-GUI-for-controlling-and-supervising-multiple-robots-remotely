@@ -2,32 +2,33 @@
    "title":"This is the title of the project",
    "team":[
       {
-         "name":"Team Member Name 1",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx"
+         "name":"Nuwan Jaliyagoda",
+         "email":"nuwanjaliyagoda@eng.pdn.ac.lk",
+         "eNumber":"E/15/140"
       },
       {
-         "name":"Team Member Name 2",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx"
+         "name":"Dilshani Karunarathne",
+         "email":"dinelkadilshani95@gmail.com",
+         "eNumber":"E/15/173"
       },
       {
-         "name":"Team Member Name 3",
-         "email":"email@eng.pdn.ac.lk",
-         "eNumber":"E/yy/xxx"
+         "name":"Pasan Tennakoon",
+         "email":"pasan96tennakoon@gmail.com",
+         "eNumber":"E/15/350"
       }
    ],
    "supervisors":[
       {
-         "name":"Dr. Supervisor 1",
-         "email":"email@eng.pdn.ac.lk"
-      },
-      {
-         "name":"Supervisor 2",
-         "email":"email@eng.pdn.ac.lk"
+         "name":"Dr. Isuru Nawinne",
+         "email":"isurunawinne@eng.pdn.ac.lk "
       }
    ],
-   "description":"This is a breif intruduction of the project. You need to use plain text without any specific characters here",
+   "description":"<p>This idea came from a project that is related to swarm intelligence. According to the definition, “Swarm intelligence is the collective behavior of decentralized, self-organized systems” Swarm robotics is applying swarm intelligence to accomplish a bigger task. And it also similar to the behavior of animals like bees, ants, birds, etc.</p>
+
+<p>One of the greatest fallbacks of swarm intelligence-related research is that it is difficult to simulate the algorithms in the real world unless you have a large number of robots to test these algorithms. Building a group of robots takes a lot of time and it is very expensive. As a solution to this problem, we can design or buy general purpose robots which have hardware capabilities to run basic swarm intelligence related algorithms. But buying a set of pre-built robots doesn’t solve the whole problem since it is too expensive yet.</p>
+
+<p>The final goal of this project is not only to design a general-purpose swarm robot unit but designing the simulation platform too. This simulation platform will be able to control basic functionalities of the robots such as assign a robot into a defined place, recharge the robot’s battery when it is draining out, program the robots with giving algorithms, etc… This simulation arena can be accessed from a remote location and these remote users can upload their own algorithms into the robots which are placed in the arena. After upload, they can run it on robots and see the response of the robots using Data and Video feedbacks. Research teams who are working in the field of Swarm Robotics can test their algorithms without taking much effort into hardware. So it saves their time and money.</p>",
+
    "tags":["Web","Embedded Systems"],
    "image":"img_cover.jpg",
    "thumbnail":"img_thumbnail.jpg"
