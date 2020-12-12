@@ -86,9 +86,9 @@ We decided to use WiFi as the default communication method between our robots an
 Since our robots will be controlled remotely, robots should be able to handle incoming commands while navigating. Due to the practical hardware problems, robots can’t move on straight directions and take precise turns without feedback loop based control structures. Most of the available sensors that measure the distance have errors and when we continually taking measurements, it will add cumulative errors. So we decided to avoid this by doing a small modification to our platform.
 
 We decided to use a black color grid on the arena, so robots can follow the lines and correct the cumulating errors from the junctions when it is passing them. Not only that, it can use this grid system to take 90 degree turns using floor color sensors and a simple feedback loop.
-        
+
 ![image](https://lh4.googleusercontent.com/mhdhV3hEShwdRqkrXKJOVsXaxmmWWyCQHZofo7Zj35E_DdeiMdjlKG7Mn-LlOFKhjNYIWzLixrZDM_8DaWyapz_MdR8cNnKjW9sR_jM90yWlsa-1CIvpPeHAQtQFOmFh432sj9rJ)
-        
+
 To identify the black lines from the white background, we decided to use IR Transmitter Receiver pairs. Principle of this sensor is that white color background reflects the IR beam emitted by the IR diode, but not by the black color background. The voltage output of the Photodiode will depend on the amount of reflection. Currently, we hope to feed this digital signal into our microcontroller as an external hardware interrupt, rather than polling digital inputs. So we decided to use an Op-amp circuit with Voltage comparator arrangement to convert this analog reading into a digital signal.
 
 ![image](https://lh4.googleusercontent.com/EXu9kh1dxkxzQ8bcB-Njhr9LQSx-P5mUyWWhtXjO-MgJjJWiMSMKktbMKIfO0yp9lKArK-De4BbKHmYxV3gcwJPdpz3bvOh3apgT4h78ilQe-biOC84FtE5_2nsfmE6VvaLH_Imr)
