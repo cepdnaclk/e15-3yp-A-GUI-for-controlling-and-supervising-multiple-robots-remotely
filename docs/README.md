@@ -68,7 +68,7 @@ We are allowing remote users (through the internet) to control and monitor the r
 
 We first considered RESTful API based server-client architecture, but it was rejected due to it doesn’t support full duplex communication. Next, we looked into use a MQTT Broker between our robots and end user. MQTT (Message Queue Telemetry Transport) was originally developed for low power IoT devices. It is a topic based on communication. Nodes can subscribe to topics, and publish into topics. When a device published data into a topic, MQTT broker will inform it to all the devices/nodes which were subscribed into that topic.
 
-![image](https://lh3.googleusercontent.com/9x6lqOtQcuyfx_6ZljvprX_f4Ge40mra2HzxUduWg-hu4hS8ShRbw7wYclEv-_xNDRe1EB3oPKN_xb6LzMcuHXmNh7B_2XmCMXr-5klSxbE-yVyi3BhI5VFKWT9bFoAnkaIQtm7j)
+<img class="img-fluid" src="https://lh3.googleusercontent.com/9x6lqOtQcuyfx_6ZljvprX_f4Ge40mra2HzxUduWg-hu4hS8ShRbw7wYclEv-_xNDRe1EB3oPKN_xb6LzMcuHXmNh7B_2XmCMXr-5klSxbE-yVyi3BhI5VFKWT9bFoAnkaIQtm7j" >
 
 We found another communication protocol known as WebRTC. It is a free and open source project which is developed for communication between browsers and mobile applications in real time. WebRTC is a plugin-free API that most of the modern web browsers support. It has multiple standards and protocols, including STUN/TURN servers, signaling, JSEP, ICE, SIP, SDP, NAT, UDP/TCP, network sockets, and more.
 
@@ -150,7 +150,7 @@ We used 5mm x 60mm Hex bolts, M5 nuts, and M5 washers as the spacers between two
 - [User Manual](./pdf/User_Manual.pdf)
 
 #### Other Links
-- [Project Repository](https://github.com/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
+- [Project Repository](https://github.com/cepdnaclk/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
 - [Project Page](https://cepdnaclk.github.io/e15-3yp-A-GUI-for-controlling-and-supervising-multiple-robots-remotely)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
