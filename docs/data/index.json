@@ -1,4 +1,5 @@
 {
+	"visibility": true,
    "title":"A GUI for control and supervising multiple robots remotely",
    "team":[
       {

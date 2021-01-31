@@ -1,5 +1,6 @@
 ---
 layout: home
+permalink: index.html
 ---
 
 # A GUI for control & supervising multiple robots remotely
