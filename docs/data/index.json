@@ -27,5 +27,12 @@
    "description":"The idea is to create a GUI platform where a user can give commands which is to be followed by some ground units in a remote location. The server can identify the starting locations of the robots and manipulate them to do the task in the most efficient way as possible.",
    "tags":["Web","Embedded Systems"],
    "image":"img_cover.jpg",
-   "thumbnail":"img_thumbnail.jpg"
+   "thumbnail":"img_thumbnail.jpg",
+   "media":[
+      {
+         "type":"youtube",
+         "title": "Introduction Video"
+         "url":"https://www.youtube.com/embed/40D3IqbQy5A"
+      }
+   ],
 }
