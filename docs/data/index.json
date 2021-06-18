@@ -1,21 +1,29 @@
 {
-	"visibility": true,
    "title":"A GUI for control and supervising multiple robots remotely",
    "team":[
       {
-         "name":"Nuwan Jaliyagoda",
-         "email":"nuwanjaliyagoda@eng.pdn.ac.lk",
-         "eNumber":"E/15/140"
+            "name": "Jaliyagoda A.J.N.M.",
+            "email": "nuwanjaliyagoda@eng.pdn.ac.lk",
+            "eNumber": "E/15/140",
+            "github_profile": "https://github.com/NuwanJ",
+            "linkedin_profile": "https://www.linkedin.com/in/nuwan-jaliyagoda/",
+            "website":"https://test.nuwanjaliyagoda.com/"
       },
       {
-         "name":"Dilshani Karunarathne",
-         "email":"dinelkadilshani95@gmail.com",
-         "eNumber":"E/15/173"
+            "name": "Karunarathna S.D.D.D.",
+            "email": "dinelkadilshani95@gmail.com",
+            "eNumber": "E/15/173",
+            "github_profile": "https://github.com/DDilshani",
+            "linkedin_profile": "https://lk.linkedin.com/in/dilshanikarunarathna",
+            "website":"#"
       },
       {
          "name":"Pasan Tennakoon",
          "email":"pasan96tennakoon@gmail.com",
-         "eNumber":"E/15/350"
+         "eNumber":"E/15/350",
+	 "github_profile": "https://github.com/PasanT9",
+	 "linkedin_profile": "#",
+	 "website": "#"
       }
    ],
    "supervisors":[
